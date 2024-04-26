@@ -1,6 +1,6 @@
 from tkinter import *
 #from modo_de_jogo_infinito import infinito
-import modo_de_jogo_1x1
+#import modo_de_jogo_1x1
 
 def jogar_infinito():
    #infinito()
