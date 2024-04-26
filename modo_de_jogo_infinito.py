@@ -52,10 +52,7 @@ def infinito():
     acertos = 0
 
     while True:
-        bola.place(x =  movimento_x, y = movimento_y)
-        jogo.update()
-        movimento_x += velocidade_movimento_x
-        movimento_y += velocidade_movimento_y
+        
         if movimento_x > 312:
             velocidade_movimento_x = -velocidade_movimento_x
         if movimento_y > 312 or movimento_y < 0:
@@ -66,6 +63,13 @@ def infinito():
             velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
         if movimento_x <= 0:
             break
+
+        movimento_x += velocidade_movimento_x
+        movimento_y += velocidade_movimento_y
+
+        bola.place(x =  movimento_x, y = movimento_y)
+        jogo.update()
+        
         sleep(0.007)
 
     jogador.destroy()
