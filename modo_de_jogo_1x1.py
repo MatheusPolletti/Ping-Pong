@@ -92,7 +92,6 @@ def modo_1x1():
     velocidade_movimento_y = 1
     
     acertos = 0
-    cont = 0
 
     while True:
 
@@ -112,19 +111,15 @@ def modo_1x1():
         if movimento_y > 391 or movimento_y < 0:
             velocidade_movimento_y = -velocidade_movimento_y
 
-        if movimento_x == jogador_1.winfo_x():
-            if movimento_y + 10 > jogador_1.winfo_y():
-                if movimento_y - 60 < jogador_1.winfo_y():
-                    velocidade_movimento_x = -velocidade_movimento_x
-                    acertos += 1
-                    velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
+        if (movimento_x == jogador_1.winfo_x()) and (movimento_y + 10 > jogador_1.winfo_y()) and (movimento_y - 60 < jogador_1.winfo_y()):
+            velocidade_movimento_x = -velocidade_movimento_x
+            acertos += 1
+            velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
 
-        if movimento_x == jogador_2.winfo_x() - 4:
-            if movimento_y + 10 > jogador_2.winfo_y():
-                if movimento_y - 60 < jogador_2.winfo_y():
-                    velocidade_movimento_x = -velocidade_movimento_x
-                    acertos += 1
-                    velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
+        if (movimento_x == jogador_2.winfo_x() - 4) and (movimento_y + 10 > jogador_2.winfo_y()) and (movimento_y - 60 < jogador_2.winfo_y()):
+            velocidade_movimento_x = -velocidade_movimento_x
+            acertos += 1
+            velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
         
         sleep(0.01)
 
@@ -133,10 +128,9 @@ def modo_1x1():
     perdeu = Label(jogo, text=perdedor, bg='black', fg='blue', font=('Bungee Shade', 12))
     perdeu.place(x = 140, y = 130)
 
-    #sleep(3)
     #jogo.destroy()
 
     jogo.mainloop()
 
 
-#modo_1x1()
+modo_1x1()

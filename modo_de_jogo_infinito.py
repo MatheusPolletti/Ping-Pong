@@ -60,12 +60,10 @@ def infinito():
             velocidade_movimento_x = -velocidade_movimento_x
         if movimento_y > 312 or movimento_y < 0:
             velocidade_movimento_y = -velocidade_movimento_y
-        if movimento_x == jogador.winfo_x():
-            if movimento_y + 10 > jogador.winfo_y():
-                if movimento_y - 60 < jogador.winfo_y():
-                    velocidade_movimento_x = -velocidade_movimento_x
-                    acertos += 1
-                    velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
+        if (movimento_x == jogador.winfo_x()) and (movimento_y + 10 > jogador.winfo_y()) and (movimento_y - 60 < jogador.winfo_y()):
+            velocidade_movimento_x = -velocidade_movimento_x
+            acertos += 1
+            velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
         if movimento_x <= 0:
             break
         sleep(0.007)
