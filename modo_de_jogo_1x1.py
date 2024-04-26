@@ -95,12 +95,6 @@ def modo_1x1():
 
     while True:
 
-        bola.place(x =  movimento_x, y = movimento_y)
-        jogo.update()
-
-        movimento_x += velocidade_movimento_x
-        movimento_y += velocidade_movimento_y
-
         if movimento_x > 411:
             perdedor = 'O jogador 1 venceu.\n\n\nO jogador 2 perdeu'
             break
@@ -120,15 +114,20 @@ def modo_1x1():
             velocidade_movimento_x = -velocidade_movimento_x
             acertos += 1
             velocidade_movimento_y = round(uniform(0.1, 1.1), 1)
+
+        movimento_x += velocidade_movimento_x
+        movimento_y += velocidade_movimento_y
+
+        bola.place(x =  movimento_x, y = movimento_y)
+        jogo.update()
         
         sleep(0.01)
 
     jogador_1.destroy()
     jogador_2.destroy()
+    
     perdeu = Label(jogo, text=perdedor, bg='black', fg='blue', font=('Bungee Shade', 12))
     perdeu.place(x = 140, y = 130)
-
-    #jogo.destroy()
 
     jogo.mainloop()
 
