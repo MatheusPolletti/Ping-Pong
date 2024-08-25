@@ -1,4 +1,6 @@
-Esse é um primeiro projeto realizado por mim(Matheus Polletti) no python usando o módulo Tkinter.
+# Jogo Ping Pong
+
+Esse é um primeiro projeto realizado por mim no python usando o módulo Tkinter.
 
 Esse projeto é um jogo de ping pong com 2 modos:
 
